@@ -1,0 +1,23 @@
+涓夊嘲鏁磋璐㈠姟绯荤粺鑵捐浜戦儴缃蹭俊鎭ā鏉?
+璇峰湪鑵捐浜戝紑閫氭湇鍔″櫒鍚庡～鍐欎互涓嬩俊鎭€傛秹鍙婂瘑鐮佹垨绉侀挜鏃讹紝鍙互鍙憡璇夋垜浣犲噯澶囦娇鐢ㄥ摢绉嶇櫥褰曟柟寮忥紱鏁忔劅鍐呭寤鸿浣犲湪鏈満鎿嶄綔鏃惰緭鍏ワ紝涓嶈鍏紑鍙戦€併€?
+1. 鏈嶅姟鍣ㄥ熀纭€淇℃伅
+鏈嶅姟鍣ㄥ叕缃?IP锛?SSH 鐢ㄦ埛鍚嶏細root
+SSH 绔彛锛?2
+鎿嶄綔绯荤粺/闀滃儚锛歂ode.js 搴旂敤妯℃澘 / Ubuntu / 鍏朵粬锛?
+2. SSH 鐧诲綍鏂瑰紡
+鐧诲綍鏂瑰紡锛氬瘑鐮?/ SSH 绉侀挜
+绉侀挜鏂囦欢璺緞锛堝浣跨敤绉侀挜锛屽缓璁斁 D:\workspace 涓嬶級锛?鏄惁宸茬‘璁ゆ湰鏈哄彲浠?SSH 鐧诲綍锛氭槸 / 鍚?
+3. 鑵捐浜戦槻鐏
+22/TCP 鏄惁宸叉斁閫氾細鏄?/ 鍚?8787/TCP 鏄惁宸叉斁閫氾細鏄?/ 鍚?80/TCP 鏄惁宸叉斁閫氾紙HTTPS 闇€瑕侊級锛氭槸 / 鍚?443/TCP 鏄惁宸叉斁閫氾紙HTTPS 闇€瑕侊級锛氭槸 / 鍚?
+4. 鍩熷悕涓?HTTPS锛堝彲閫夛級
+鏄惁閰嶇疆鍩熷悕锛氭槸 / 鍚?鍩熷悕锛?鍩熷悕鏄惁宸茶В鏋愬埌鏈嶅姟鍣ㄥ叕缃?IP锛氭槸 / 鍚?璇佷功閭锛?
+5. 瀹㈡埛绔～鍐欏湴鍧€
+涓存椂 HTTP 鍦板潃锛歨ttp://鏈嶅姟鍣ㄥ叕缃慖P:8787
+姝ｅ紡 HTTPS 鍦板潃锛歨ttps://浣犵殑鍩熷悕
+
+6. 閮ㄧ讲鍛戒护鍙傝€?鏃犲煙鍚嶏細
+powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 鏈嶅姟鍣↖P -User root
+
+浣跨敤绉侀挜锛?powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 鏈嶅姟鍣↖P -User root -SshKeyPath D:\workspace\your-key.pem
+
+甯?HTTPS锛?powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 鏈嶅姟鍣↖P -User root -Domain api.example.com -Email admin@example.com
