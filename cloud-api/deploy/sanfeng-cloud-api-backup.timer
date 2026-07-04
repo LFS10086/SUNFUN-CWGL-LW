@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Sanfeng Finance Cloud API data backup
+
+[Timer]
+OnCalendar=*-*-* 03:20:00
+Persistent=true
+Unit=sanfeng-cloud-api-backup.service
+
+[Install]
+WantedBy=timers.target

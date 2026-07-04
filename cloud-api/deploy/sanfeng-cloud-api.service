@@ -1,0 +1,16 @@
+[Unit]
+Description=Sanfeng Finance Cloud API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/sanfeng-cloud-api
+EnvironmentFile=/etc/sanfeng-cloud-api.env
+ExecStart=/usr/bin/node /opt/sanfeng-cloud-api/server.js
+Restart=always
+RestartSec=5
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

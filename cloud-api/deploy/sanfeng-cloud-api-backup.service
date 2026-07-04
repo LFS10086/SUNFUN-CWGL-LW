@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup Sanfeng Finance Cloud API data
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/sanfeng-cloud-api.env
+ExecStart=/bin/bash /opt/sanfeng-cloud-api/deploy/backup-data.sh
+User=root
+Group=root

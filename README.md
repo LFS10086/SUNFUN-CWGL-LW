@@ -1,34 +1,30 @@
-# 三峰整装经销商客户整装财务收支管理系统网络未配置版
+# SUNFUN-CWGL-LW
 
-三峰整装财务收支管理系统联网版腾讯云部署交付仓库。
+三峰整装财务收支管理系统联网版与腾讯云部署资料仓库。
 
 ## 客户下载
 
-请到本仓库的 Releases 下载完整交付包：
+请到 Releases 下载完整交付包：
 
-- 文件名：SUNFUN-CWGL-Tencent-Deploy-Kit-20260704.zip
-- SHA256：C66CF540E8203B4C82EF0442A0640551D76BDED07A6FA48C19F6A743630838B6
-- 发布标签：tencent-deploy-kit-20260704
+https://github.com/LFS10086/SUNFUN-CWGL-LW/releases/tag/tencent-deploy-kit-20260704
 
 交付包内包含：
 
-- sanfeng-cloud-api-tencent.zip：腾讯云后端部署包
-- 服务器信息填写模板.txt：客户填写服务器、公网 IP、SSH、域名、防火墙等信息
-- 腾讯云开通部署清单.md：开通腾讯云轻量应用服务器和部署检查清单
-- README.md：一键部署、HTTPS、验收和诊断命令说明
+- `sanfeng-cloud-api-tencent.zip`：腾讯云后端部署包
+- `服务器信息填写模板.txt`：客户填写公网 IP、SSH、域名、防火墙等信息
+- `腾讯云开通部署清单.md`：服务器开通与部署检查清单
+- `README.md`：部署、HTTPS、验收、诊断命令说明
 
-## 部署包校验
+## 仓库目录
 
-后端部署包 sanfeng-cloud-api-tencent.zip 的 SHA256：
+- `cloud-api/`：联网版 Node.js 后端源码、部署脚本、验收脚本和腾讯云部署文档。
+- `服务器信息填写模板.txt`：服务器信息表。
+- `腾讯云开通部署清单.md`：开通与部署清单。
 
-EB59975A79563106B208AC9A0D7C511FBBA9A6290A7C7C5843254E62A5FA0229
+## 与本地版仓库的关系
 
-## 使用方式
+本地运行版项目源码和桌面端构建配置保存在：
 
-1. 下载 Release 里的完整交付包。
-2. 解压后先填写 服务器信息填写模板.txt。
-3. 按 腾讯云开通部署清单.md 开通腾讯云轻量应用服务器。
-4. 使用交付包 README 中的一键部署命令完成安装。
-5. 桌面客户端登录页填写云端 API 地址后即可使用云端数据。
+https://github.com/LFS10086/SUNFUN-CWGL
 
-客户自行适配时，优先改服务器地址、域名、端口、防火墙和云端 API 地址，不要把真实业务数据提交到 GitHub。
+本仓库只放联网腾讯云部署相关内容，避免客户把本地版和云端部署资料混淆。

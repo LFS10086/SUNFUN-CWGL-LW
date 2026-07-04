@@ -1,23 +1,40 @@
-涓夊嘲鏁磋璐㈠姟绯荤粺鑵捐浜戦儴缃蹭俊鎭ā鏉?
-璇峰湪鑵捐浜戝紑閫氭湇鍔″櫒鍚庡～鍐欎互涓嬩俊鎭€傛秹鍙婂瘑鐮佹垨绉侀挜鏃讹紝鍙互鍙憡璇夋垜浣犲噯澶囦娇鐢ㄥ摢绉嶇櫥褰曟柟寮忥紱鏁忔劅鍐呭寤鸿浣犲湪鏈満鎿嶄綔鏃惰緭鍏ワ紝涓嶈鍏紑鍙戦€併€?
-1. 鏈嶅姟鍣ㄥ熀纭€淇℃伅
-鏈嶅姟鍣ㄥ叕缃?IP锛?SSH 鐢ㄦ埛鍚嶏細root
-SSH 绔彛锛?2
-鎿嶄綔绯荤粺/闀滃儚锛歂ode.js 搴旂敤妯℃澘 / Ubuntu / 鍏朵粬锛?
-2. SSH 鐧诲綍鏂瑰紡
-鐧诲綍鏂瑰紡锛氬瘑鐮?/ SSH 绉侀挜
-绉侀挜鏂囦欢璺緞锛堝浣跨敤绉侀挜锛屽缓璁斁 D:\workspace 涓嬶級锛?鏄惁宸茬‘璁ゆ湰鏈哄彲浠?SSH 鐧诲綍锛氭槸 / 鍚?
-3. 鑵捐浜戦槻鐏
-22/TCP 鏄惁宸叉斁閫氾細鏄?/ 鍚?8787/TCP 鏄惁宸叉斁閫氾細鏄?/ 鍚?80/TCP 鏄惁宸叉斁閫氾紙HTTPS 闇€瑕侊級锛氭槸 / 鍚?443/TCP 鏄惁宸叉斁閫氾紙HTTPS 闇€瑕侊級锛氭槸 / 鍚?
-4. 鍩熷悕涓?HTTPS锛堝彲閫夛級
-鏄惁閰嶇疆鍩熷悕锛氭槸 / 鍚?鍩熷悕锛?鍩熷悕鏄惁宸茶В鏋愬埌鏈嶅姟鍣ㄥ叕缃?IP锛氭槸 / 鍚?璇佷功閭锛?
-5. 瀹㈡埛绔～鍐欏湴鍧€
-涓存椂 HTTP 鍦板潃锛歨ttp://鏈嶅姟鍣ㄥ叕缃慖P:8787
-姝ｅ紡 HTTPS 鍦板潃锛歨ttps://浣犵殑鍩熷悕
+三峰整装财务系统腾讯云部署信息模板
 
-6. 閮ㄧ讲鍛戒护鍙傝€?鏃犲煙鍚嶏細
-powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 鏈嶅姟鍣↖P -User root
+请在腾讯云开通服务器后填写以下信息。涉及密码或私钥时，可以只告诉我你准备使用哪种登录方式；敏感内容建议你在本机操作时输入，不要公开发送。
 
-浣跨敤绉侀挜锛?powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 鏈嶅姟鍣↖P -User root -SshKeyPath D:\workspace\your-key.pem
+1. 服务器基础信息
+服务器公网 IP：
+SSH 用户名：root
+SSH 端口：22
+操作系统/镜像：Node.js 应用模板 / Ubuntu / 其他：
 
-甯?HTTPS锛?powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 鏈嶅姟鍣↖P -User root -Domain api.example.com -Email admin@example.com
+2. SSH 登录方式
+登录方式：密码 / SSH 私钥
+私钥文件路径（如使用私钥，建议放 D:\workspace 下）：
+是否已确认本机可以 SSH 登录：是 / 否
+
+3. 腾讯云防火墙
+22/TCP 是否已放通：是 / 否
+8787/TCP 是否已放通：是 / 否
+80/TCP 是否已放通（HTTPS 需要）：是 / 否
+443/TCP 是否已放通（HTTPS 需要）：是 / 否
+
+4. 域名与 HTTPS（可选）
+是否配置域名：是 / 否
+域名：
+域名是否已解析到服务器公网 IP：是 / 否
+证书邮箱：
+
+5. 客户端填写地址
+临时 HTTP 地址：http://服务器公网IP:8787
+正式 HTTPS 地址：https://你的域名
+
+6. 部署命令参考
+无域名：
+powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 服务器IP -User root
+
+使用私钥：
+powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 服务器IP -User root -SshKeyPath D:\workspace\your-key.pem
+
+带 HTTPS：
+powershell -ExecutionPolicy Bypass -File .\cloud-api\deploy\deploy-full-from-windows.ps1 -HostName 服务器IP -User root -Domain api.example.com -Email admin@example.com
